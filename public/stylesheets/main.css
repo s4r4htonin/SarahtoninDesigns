@@ -4,14 +4,11 @@ html {
 
 body {
     background-image: url(/imgs/Wave8.svg);
+    background-color: #070f3c;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/* body {
-    background-color: 070f3c;
-} */
 
 h1 {
     padding-top: 5%;
@@ -20,4 +17,10 @@ h1 {
     text-shadow: 0px 4px 3px #00ffffbb, 
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#projectsContainer {
+    margin-top: 10%;
+    text-align: center;
+    color: white;
 }
