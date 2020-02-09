@@ -4,20 +4,11 @@
 
 const   express        = require('express'),
         app            = express(),
-        bodyParser     = require("body-parser"),
-        mongoose       = require("mongoose");
+        bodyParser     = require("body-parser");
 
 //~~~~~~~~~~~~~~~~~~//
 //    App Config    //
 //~~~~~~~~~~~~~~~~~~//
-
-//Mongoose config
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.set('useCreateIndex', true);
-// mongoose.set('useUnifiedTopology', true);
-// let url = "mongodb://localhost/sarahtonin_designs"; //connect to defined route or backup local route
-// mongoose.connect(url); //connect to MongoDB
 
 app.use(bodyParser.urlencoded({ extended: true })); //allows express to pull data from forms using req.body._________
 app.set("view engine", "ejs"); //Tells express that /views are ejs files
