@@ -2,9 +2,16 @@
 //    Definitions   //
 //~~~~~~~~~~~~~~~~~~//
 
-const   express        = require('express'),
+const   express        = require("express"),
         app            = express(),
         bodyParser     = require("body-parser");
+
+//Models
+
+
+//Routes
+const indexRoutes   = require("./routes/index"),
+      projectRoutes = require("./routes/projects");
 
 //~~~~~~~~~~~~~~~~~~//
 //    App Config    //
@@ -14,19 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true })); //allows express to pull dat
 app.set("view engine", "ejs"); //Tells express that /views are ejs files
 app.use(express.static("public")); //Link CSS stylesheets to app, __dirname adds directory that folder lives in
 
-//~~~~~~~~~~~~~~~~~~//
-//      Routes      //
-//~~~~~~~~~~~~~~~~~~//
+//Database Config
 
-//Root Route
-app.get("/", function(req, res){
-    res.render("index");
-});
-
-//Contact Me
-app.get("/contact", function(req, res){
-    res.render("contact");
-});
+//Routes
+app.use("/", indexRoutes);
+app.use("/projects", projectRoutes);
 
 //~~~~~~~~~~~~~~~~~~//
 //   Start Server   //
