@@ -2,11 +2,11 @@
 //    Definitions   //
 //~~~~~~~~~~~~~~~~~~//
 
-const express = require("express"),
-      router  = express.Router();
+const express  = require("express"),
+      router   = express.Router();
 
 //Models
-// Insert projects model here
+const Project = require("../models/project");
 
 //~~~~~~~~~~~~~~~~~~//
 //      Routes      //
@@ -14,7 +14,7 @@ const express = require("express"),
 
 //Root Route
 router.get("/", function(req, res){
-    res.render("index");
+    res.redirect("/projects");
 });
 
 //Contact Me
