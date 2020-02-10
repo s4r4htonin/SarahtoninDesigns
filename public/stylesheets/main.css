@@ -19,8 +19,17 @@ h1 {
                  0px 18px 23px rgba(0,0,0,0.1);
 }
 
+label {
+    color: white;
+}
+
 #projectsContainer {
     margin-top: 10%;
     text-align: center;
     color: white;
+}
+
+.formStyling {
+    max-width: 75%;
+    margin: 25px auto;
 }

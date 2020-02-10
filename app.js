@@ -18,8 +18,14 @@ app.use(express.static("public")); //Link CSS stylesheets to app, __dirname adds
 //      Routes      //
 //~~~~~~~~~~~~~~~~~~//
 
+//Root Route
 app.get("/", function(req, res){
     res.render("index");
+});
+
+//Contact Me
+app.get("/contact", function(req, res){
+    res.render("contact");
 });
 
 //~~~~~~~~~~~~~~~~~~//
