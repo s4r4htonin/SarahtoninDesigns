@@ -41,8 +41,6 @@ router.post("/", function(req, res){
 });
 
 //Show - get request to "/:id"
-    //find project by id
-    //render show page passing project to template
 router.get("/:id", function(req, res){
     Project.findById(req.params.id, function(err, foundProject){
         if (err){
