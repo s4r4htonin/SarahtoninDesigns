@@ -12,7 +12,7 @@ body {
 
 h1 {
     padding-top: 5%;
-    color:rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
     text-shadow: 1px 4px 3px rgba(16, 148, 230, 0.633), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
     /* text-shadow: 0px 4px 3px #00ffffbb, 
@@ -34,13 +34,49 @@ textarea {
     color: #1093E6;
 }
 
+/* Index Images */
+
+.card {
+    width: 18rem;
+    border: none;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.img-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1093E6;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.img-container:hover .overlay {
+    opacity: 0.7;
+}
+
+.overlay span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+/* Form Styling */
+
 .formStyling {
     max-width: 75%;
     margin: 25px auto;
 }
 
 .btn-primary {
-    /* background-color:#00ffffd4; */
     background-color: #1093E6;
 }
 
@@ -58,95 +94,94 @@ textarea {
     position: relative;
 }
 
-    .icon:before {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        line-height: 1;
-        text-transform: none !important;
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 400;
-    }
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
 
-    .icon > .label {
-        display: none;
-    }
+.icon>.label {
+    display: none;
+}
 
-    .icon:before {
-        line-height: inherit;
-    }
+.icon:before {
+    line-height: inherit;
+}
 
-    .icon.solid:before {
-        font-weight: 900 !important;
-    }
+.icon.solid:before {
+    font-weight: 900 !important;
+}
 
-    .icon.brands:before {
-        font-family: 'Font Awesome 5 Brands' !important;
-    }
+.icon.brands:before {
+    font-family: 'Font Awesome 5 Brands' !important;
+}
 
-    .icon.alt {
-        text-decoration: none;
-    }
+.icon.alt {
+    text-decoration: none;
+}
 
-        .icon.alt:before {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 1;
-            text-transform: none !important;
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 400;
-        }
+.icon.alt:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
 
-        .icon.alt:before {
-            color: #1c1d26 !important;
-            text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
-        }
+.icon.alt:before {
+    color: #1c1d26 !important;
+    text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
+}
 
-    .icon.major {
-        background: #070f3c;
-        border-radius: 100%;
-        cursor: default;
-        display: inline-block;
-        height: 6em;
-        line-height: 5.65em;
-        margin: 0 0 2em 0;
-        text-align: center;
-        width: 6em;
-    }
+.icon.major {
+    background: #070f3c;
+    border-radius: 100%;
+    cursor: default;
+    display: inline-block;
+    height: 6em;
+    line-height: 5.65em;
+    margin: 0 0 2em 0;
+    text-align: center;
+    width: 6em;
+}
 
-        .icon.major:before {
-            font-size: 2.25em;
-        }
+.icon.major:before {
+    font-size: 2.25em;
+}
 
-        .icon.major.alt {
-            text-decoration: none;
-        }
+.icon.major.alt {
+    text-decoration: none;
+}
 
-            .icon.major.alt:before {
-                -moz-osx-font-smoothing: grayscale;
-                -webkit-font-smoothing: antialiased;
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                line-height: 1;
-                text-transform: none !important;
-                font-family: 'Font Awesome 5 Free';
-                font-weight: 400;
-            }
+.icon.major.alt:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
 
-            .icon.major.alt:before {
-                color: #070f3c !important;
-                text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
-            }
-
+.icon.major.alt:before {
+    color: #070f3c !important;
+    text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
+}
 
 ul.icons {
     cursor: default;

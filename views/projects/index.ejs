@@ -14,13 +14,21 @@
             <% for (let i = 0; i < projects.length; i++){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="card-deck">
-                    <div class="card" style="width: 18rem;">
-                        <a href="/projects/<%= projects[i]._id %>"></a>
+                    <div class="card">
+                        <!-- <a href="/projects/<%= projects[i]._id %>"></a>
                             <img class="card-img-top" src="<%= projects[i].images[0] %>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><%= projects[i].name %></h5>
                             </div>
-                        </a>
+                        </a> -->
+                        <div class="img-container">
+                            <a href="/projects/<%= projects[i]._id %>">
+                                <img class="card-img" src="<%= projects[i].images[0] %>" alt="Card image cap">
+                                <div class="overlay">
+                                    <span><%= projects[i].name %></span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
