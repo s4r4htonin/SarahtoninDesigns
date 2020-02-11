@@ -30,7 +30,7 @@ router.get("/new", function(req, res){
 
 //Create - post request to "/"
 router.post("/", function(req, res){
-    Project.create(req.body.project, function (err, newProject){
+    Project.create(req.body.project, function(err, newProject){
         if (err){
             console.log(err);
         } else {
@@ -38,12 +38,22 @@ router.post("/", function(req, res){
             res.redirect("/projects");
         }
     })
-    //create new project
-    //save new project to database
-    //redirect to /projects
 });
 
 //Show - get request to "/:id"
+    //find project by id
+    //render show page passing project to template
+router.get("/:id", function(req, res){
+    Project.findById(req.params.id, function(err, foundProject){
+        if (err){
+            console.log(err);
+        } else {
+            res.render("projects/show", { project: foundProject });
+        }
+    });
+});
+
+
 //Edit - get request to "/:id/edit"
 //Update - put request to "/:id"
 //Destroy - delete request to "/:id"

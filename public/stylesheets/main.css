@@ -38,6 +38,7 @@ textarea {
 .card {
     width: 18rem;
     border: none;
+    margin: 25px auto;
 }
 
 .img-container {
@@ -54,6 +55,7 @@ textarea {
     background: #1093E6;
     opacity: 0;
     transition: opacity 500ms ease-in-out;
+    border-radius: calc(.25rem - 1px);
 }
 
 .img-container:hover .overlay {
@@ -66,6 +68,27 @@ textarea {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+}
+
+/* Show Page */
+
+.carousel {
+    max-width: 75%;
+    margin: auto;
+    border-radius: .3rem;
+}
+
+.carousel .carousel-inner {
+    border-radius: .3rem;
+}
+
+.jumbotron {
+    background-color: #00ffff27;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    max-width: 75%;
+    margin: 25px auto;
 }
 
 /* Form Styling */

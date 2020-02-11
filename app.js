@@ -32,8 +32,6 @@ app.set("view engine", "ejs"); //Tells express that /views are ejs files
 app.use(express.static("public")); //Link CSS stylesheets to app, __dirname adds directory that folder lives in
 app.use(methodOverride("_method")); //allow PUT/DELETE requests from form
 
-//Database Config
-
 //Routes
 app.use("/", indexRoutes);
 app.use("/projects", projectRoutes);
