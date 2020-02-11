@@ -6,7 +6,6 @@ const projectSchema = new mongoose.Schema({
     timeline: String, 
     image: [String],
     description: String
-    // links: [String] 
 });
 
 module.exports = mongoose.model("Project", projectSchema);
