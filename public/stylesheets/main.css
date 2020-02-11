@@ -14,10 +14,9 @@ h1 {
     padding-top: 5%;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    text-shadow: 1px 4px 3px rgba(16, 148, 230, 0.633), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
-    /* text-shadow: 0px 4px 3px #00ffffbb, 
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1); */
+    text-shadow: 1px 4px 3px rgba(16, 148, 230, 0.633), 
+                 0px 8px 13px rgba(0, 0, 0, 0.1), 
+                 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 label {
