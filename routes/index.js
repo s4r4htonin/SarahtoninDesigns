@@ -27,16 +27,16 @@ router.get("/contact", function(req, res){
 //Send contact email
 router.post("/contact", function(req, res){
 
-    let transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: "proccess.env.EMAIL",
-        pass: "process.env.GMAILPW"
-      }
+    let smtpTransport = nodemailer.createTransport({ //stores email service being used as variable
+        service: 'Gmail',
+        auth: {
+            user: 'ravereviews44@gmail.com',
+            pass: process.env.GMAILPW
+        }
     });
     
-    var mailOptions = {
-      from: "proccess.env.EMAIL",
+    let mailOptions = {
+      from: 'ravereviews44@gmail.com',
       to: "sarahtonindesigns@gmail.com",
       subject: "Contact Form Response",
       text: `From: ${req.body.contact.name} \n
@@ -45,12 +45,12 @@ router.post("/contact", function(req, res){
              ${req.body.contact.message}`
     };
     
-    transporter.sendMail(mailOptions, function(err, sentMail){
-      if (error) {
+    smtpTransport.sendMail(mailOptions, function(err, sentMail){
+      if (err) {
         console.log(err);
         res.redirect("/contact");
       } else {
-        res.redirect("/");
+        res.redirect("/",);
       }
     });
 });

@@ -1,4 +1,4 @@
 node_modules/
 .DS_Store
 public/imgs/projects/
-sarahtonin_designs.env
+.env
