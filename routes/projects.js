@@ -37,7 +37,7 @@ cloudinary.config({
   });
 
 //~~~~~~~~~~~~~~~~~~//
-//      Routes      //
+//  Project Routes  //
 //~~~~~~~~~~~~~~~~~~//
 
 //Index
@@ -89,6 +89,43 @@ router.get("/:id", function (req, res) {
     });
 });
 
+//~~~~~~~~~~~~~~~~~~~~//
+//  Add Image Routes  //
+//~~~~~~~~~~~~~~~~~~~~//
+
+//New - Show form to upload another image for an existing project
+router.get("/:id/new", function (req, res){
+    Project.findById(req.params.id, function (err, foundProject) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("projects/imgs/new", { project: foundProject });
+        }
+    });
+});
+
+//Create - Push new image into image array for existing project
+
+router.post("/:id", upload.single("image"), function(req, res){
+    cloudinary.v2.uploader.upload(req.file.path, function(err, result) { //upload image to cloudinary
+        if (err){
+            console.log(err);
+            req.redirect("back");
+        }
+        req.body.image = result.secure_url; // add cloudinary url for the image 
+
+        Project.findById(req.params.id, function (err, foundProject) { //find the project
+            if (err) {
+                console.log(err);
+            } else {
+                let newImage = req.body.image;
+                foundProject.image.push(newImage);
+                foundProject.save();
+                res.redirect(`/projects/${foundProject._id}`);
+            }
+        });
+    });
+});
 
 //Edit - get request to "/:id/edit"
 //Update - put request to "/:id"
