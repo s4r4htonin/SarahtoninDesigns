@@ -24,7 +24,25 @@ router.get("/", function(req, res){
 });
 
 //New - get request to "/new"
+router.get("/new", function(req, res){
+    res.render("projects/new");
+});
+
 //Create - post request to "/"
+router.post("/", function(req, res){
+    Project.create(req.body.project, function (err, newProject){
+        if (err){
+            console.log(err);
+        } else {
+            newProject.save(); //save new project to database
+            res.redirect("/projects");
+        }
+    })
+    //create new project
+    //save new project to database
+    //redirect to /projects
+});
+
 //Show - get request to "/:id"
 //Edit - get request to "/:id/edit"
 //Update - put request to "/:id"

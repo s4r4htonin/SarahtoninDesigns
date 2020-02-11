@@ -24,10 +24,14 @@ label {
     color: rgba(255, 255, 255, 0.9);
 }
 
+textarea {
+    resize: none;
+}
+
 #projectsContainer {
-    margin-top: 10%;
+    margin-top: 25%;
     text-align: center;
-    color: white;
+    color: #1093E6;
 }
 
 .formStyling {

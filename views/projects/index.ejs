@@ -8,21 +8,22 @@
     <div class="container ">
         <div class="row">
             <!-- for loop to iterate over projects and make a card for each one -->
-                <!-- Display index image -->
-                <!-- Display project name -->
-                <!-- Ability to click -> show page with more photos/info about project -->
+            <!-- Display index image -->
+            <!-- Display project name -->
+            <!-- Ability to click -> show page with more photos/info about project -->
             <% for (let i = 0; i < projects.length; i++){ %>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card-deck">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="<%= projects[i].name.indexImage %>" alt="Card image cap">
+            <div class="col-md-3 col-sm-6">
+                <div class="card-deck">
+                    <div class="card" style="width: 18rem;">
+                        <a href="/projects/<%= projects[i]._id %>"></a>
+                            <img class="card-img-top" src="<%= projects[i].images[0] %>" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title"><%= projects[i].name %>></h5>
-                                <a href="/projects/<%= projects[i]._id %>" class="btn btn-primary">View Project</a>
+                                <h5 class="card-title"><%= projects[i].name %></h5>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
+            </div>
             <% } %>
         </div>
     </div>
