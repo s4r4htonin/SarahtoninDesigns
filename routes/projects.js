@@ -105,22 +105,21 @@ router.get("/:id/new", function (req, res){
 });
 
 //Create - Push new image into image array for existing project
-
 router.post("/:id", upload.single("image"), function(req, res){
     cloudinary.v2.uploader.upload(req.file.path, function(err, result) { //upload image to cloudinary
         if (err){
             console.log(err);
             req.redirect("back");
         }
-        req.body.image = result.secure_url; // add cloudinary url for the image 
+        req.body.image = result.secure_url;// add cloudinary url for the new image 
 
-        Project.findById(req.params.id, function (err, foundProject) { //find the project
+        Project.findById(req.params.id, function (err, foundProject) { //find the project by id
             if (err) {
                 console.log(err);
             } else {
                 let newImage = req.body.image;
-                foundProject.image.push(newImage);
-                foundProject.save();
+                foundProject.image.push(newImage); //push the new image to the array of images for the project
+                foundProject.save(); //save the new image under the existing project in the database
                 res.redirect(`/projects/${foundProject._id}`);
             }
         });
