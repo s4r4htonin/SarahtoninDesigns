@@ -92,12 +92,12 @@ textarea {
 /* Show Page */
 
 .carousel {
-    max-width: 75%;
-    /* max-height: 5%; */
-    margin: 0 auto; */
+    width: 70vw;
+    height: 70vh;
+    margin: 0 auto;
     border-radius: .3rem;
-    /* object-position: center;
-    overflow: hidden; */
+    /* object-position: center; */
+    overflow: hidden;
 }
 
 .carousel .carousel-inner {
@@ -105,7 +105,12 @@ textarea {
 }
 
 .carousel-item img {
-    margin: 0 auto;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    /* Currently makes all images fit to same size container */
+    /* Still can't figure out how to make images full height of container with auto padding on sides for vertical images */
+    
 }
 
 .jumbotron {
@@ -113,7 +118,7 @@ textarea {
     color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.5);
 
-    max-width: 75%;
+    width: 70vw;
     margin: 25px auto;
 }
 
