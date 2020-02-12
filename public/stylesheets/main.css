@@ -28,7 +28,7 @@ textarea {
 }
 
 #projectsContainer {
-    margin-top: 25%;
+    margin-top: 20%;
     text-align: center;
     color: #1093E6;
 }
@@ -37,6 +37,7 @@ textarea {
 
 .card-columns {
     display: inline-block;
+    margin: auto;
 }
 
 .card {

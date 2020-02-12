@@ -4,28 +4,28 @@
     <h1>Sarahtonin Designs</h1>
 </div>
 <div class="container-fixed" id="projectsContainer">
-    <!-- <h2>Recent Work</h2> -->
-    <div class="container ">
-        <div class="row">
-            <!-- Ability to click -> show page with more photos/info about project -->
-            <% for (let i = 0; i < projects.length; i++){ %>
-                <!-- <div class="col-md-4 col-sm-6"> -->
-                    <div class="card-columns col-md-4 col-sm-6 d-flex flex-column">
-                        <div class="card">
-                            <div class="img-container">
-                                <a href="/projects/<%= projects[i]._id %>">
-                                    <img class="card-img" src="<%= projects[i].image[0] %>" alt="Card image cap">
-                                    <div class="overlay">
-                                        <span><%= projects[i].name %></span>
-                                    </div>
-                                </a>
-                            </div>
+    <h3>Recent Work</h2>
+        
+        <!-- Masonry like grid -->
+        <div class="container">
+            <div class="row">
+                <div class="card-columns">
+                    <% for (let i = 0; i < projects.length; i++){ %>
+                    <div class="card">
+                        <div class="img-container">
+                            <a href="/projects/<%= projects[i]._id %>">
+                                <img class="card-img" src="<%= projects[i].image[0] %>" alt="Card image cap">
+                                <div class="overlay">
+                                    <span><%= projects[i].name %></span>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                <!-- </div> -->
-            <% } %>
+                    <% } %>
+                </div>
+            </div>
         </div>
-    </div>
+
 </div>
 
 <%- include("../partials/footer") %>
