@@ -47,6 +47,10 @@ textarea {
     color: #1093E6;
 }
 
+.navbar-custom {
+    /* background-color: #00ffff27; */
+}
+
 /* Index Images */
 
 .card-columns {
@@ -105,7 +109,7 @@ textarea {
 }
 
 .carousel-item img {
-    height: 100vh;
+    height: 70vh;
     object-fit: cover;
     object-position: center;
     /* Currently makes all images fit to same size container */
