@@ -9,8 +9,8 @@
         <div class="row">
             <!-- Ability to click -> show page with more photos/info about project -->
             <% for (let i = 0; i < projects.length; i++){ %>
-                <div class="col-md-3 col-sm-6">
-                    <div class="card-deck">
+                <!-- <div class="col-md-4 col-sm-6"> -->
+                    <div class="card-columns col-md-4 col-sm-6 d-flex flex-column">
                         <div class="card">
                             <div class="img-container">
                                 <a href="/projects/<%= projects[i]._id %>">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             <% } %>
         </div>
     </div>

@@ -35,6 +35,10 @@ textarea {
 
 /* Index Images */
 
+.card-columns {
+    display: inline-block;
+}
+
 .card {
     width: 18rem;
     border: none;
