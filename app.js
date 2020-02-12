@@ -24,7 +24,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-let url = process.env.DATABASE || "mongodb://localhost/sarahtonin_designs"; //connect to defined route or backup local route
+let url = process.env.DATABASEURL || "mongodb://localhost/sarahtonin_designs"; //connect to defined route or backup local route
 mongoose.connect(url); //connect to MongoDB
 
 app.use(bodyParser.urlencoded({ extended: true })); //allows express to pull data from forms using req.body._________
