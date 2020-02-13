@@ -67,6 +67,10 @@ textarea {
     border: 4px solid rgba(255, 255, 255, 0.9);
  }
 
+ #aboutText {
+     text-align: center;
+ }
+
 /* Index */
 
 #projectsContainer {
