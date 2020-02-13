@@ -19,6 +19,11 @@ router.get("/", function(req, res){
     res.redirect("/projects");
 });
 
+//About Me
+router.get("/about", function(req, res){
+  res.render("about");
+});
+
 //Contact Me
 router.get("/contact", function(req, res){
     res.render("contact");

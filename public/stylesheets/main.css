@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+head {
+    font-family: 'Raleway', sans-serif;
+}
+
 body {
     background-image: url(/imgs/Wave8.svg);
     background-color: #070f3c;
@@ -45,6 +49,10 @@ textarea {
     margin-top: 3%;
     text-align: center;
     color: #1093E6;
+}
+
+.navbar-brand {
+    font-weight: 500;
 }
 
 /* Index Images */
