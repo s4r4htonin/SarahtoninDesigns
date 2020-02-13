@@ -100,7 +100,6 @@ textarea {
     height: 70vh;
     margin: 0 auto;
     border-radius: .3rem;
-    /* object-position: center; */
     overflow: hidden;
 }
 
@@ -109,12 +108,10 @@ textarea {
 }
 
 .carousel-item img {
+    width:100%;
     height: 70vh;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
-    /* Currently makes all images fit to same size container */
-    /* Still can't figure out how to make images full height of container with auto padding on sides for vertical images */
-    
 }
 
 .jumbotron {
