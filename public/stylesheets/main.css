@@ -47,15 +47,19 @@ textarea {
     color: #1093E6;
 }
 
-.navbar-custom {
-    /* background-color: #00ffff27; */
-}
-
 /* Index Images */
 
 .card-columns {
     display: inline-block;
     margin: auto;
+}
+
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count:2;
+        -moz-column-count:2;
+        column-count:2;
+    }
 }
 
 .card {
