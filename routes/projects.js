@@ -2,11 +2,11 @@
 //    Definitions   //
 //~~~~~~~~~~~~~~~~~~//
 
-const express    = require("express"),
-      router     = express.Router(),
-      dotenv     = require("dotenv").config(),
-      multer     = require("multer"),
-      cloudinary = require("cloudinary");
+const express          = require("express"),
+      router           = express.Router(),
+      dotenv           = require("dotenv").config(),
+      multer           = require("multer"),
+      cloudinary       = require("cloudinary");
 
 //Models
 const Project = require("../models/project");
@@ -83,11 +83,38 @@ router.get("/:id", function (req, res) {
     Project.findById(req.params.id, function (err, foundProject) {
         if (err) {
             console.log(err);
+            res.redirect("back");
         } else {
             res.render("projects/show", { project: foundProject });
         }
     });
 });
+
+//Edit - get request to "/:id/edit"
+router.get("/:id/edit", function (req, res){
+    Project.findById(req.params.id, function (err, foundProject){
+        if (err) {
+            console.log(err);
+            res.redirect("back");
+        } else {
+            res.render("projects/edit", { project: foundProject });
+        }
+    });
+});
+
+//Update - put request to "/:id"
+router.put("/:id", function (req, res){
+    Project.findByIdAndUpdate(req.params.id, req.body.project, function (err, foundProject){
+        if (err){
+            console.log(err);
+            res.redirect("back");
+        } else {
+            res.redirect("/projects/" + req.params.id);
+        }
+    });
+});
+
+
 
 //~~~~~~~~~~~~~~~~~~~~//
 //  Add Image Routes  //
@@ -126,8 +153,6 @@ router.post("/:id", upload.single("image"), function(req, res){
     });
 });
 
-//Edit - get request to "/:id/edit"
-//Update - put request to "/:id"
 //Destroy - delete request to "/:id"
 
 module.exports = router;

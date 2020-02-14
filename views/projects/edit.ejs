@@ -4,21 +4,21 @@
 
 <div class="container">
     <div class="formStyling">
-        <form action="/projects" method="POST">
+        <form action="/projects/<%= project._id %>?_method=PUT" method="POST">
             <div class="form-group">
                 <label class="pull-left" for="project[name]">Name</label>
-                <input class="form-control" type="text" name="project[name]" autofocus required>
+                <input class="form-control" type="text" name="project[name]" value=" <%= project.name %>" autofocus required>
             </div>
-            <div class="form-group">
-                <label class="pull-left" for="project[images]">Index Image</label>
-                <input class="form-control" type="text" name="project[images]" autofocus required>
-            </div>
+            <!-- <div class="form-group">
+                <label class="pull-left" for="project[image]">Index Image</label>
+                <input class="form-control" type="text" name="project[image]" value="<%= project.image[0] %>" autofocus required>
+            </div> -->
             <div class="form-group">
                 <label class="pull-left" for="project[description]">Description</label>
-                <textarea rows="8" class="form-control" name="project[description]" autofocus required></textarea>
+                <textarea rows="8" class="form-control" name="project[description]" autofocus required><%= project.description %></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-lg btn-block btn-primary">Add</button>
+                <button class="btn btn-lg btn-block btn-primary">Update</button>
             </div>
         </form>
     </div>

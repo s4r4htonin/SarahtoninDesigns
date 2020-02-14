@@ -2,11 +2,11 @@
 //    Definitions   //
 //~~~~~~~~~~~~~~~~~~//
 
-const   express        = require("express"),
-        app            = express(),
-        bodyParser     = require("body-parser"),
-        mongoose       = require("mongoose"),
-        methodOverride = require("method-override");
+const   express          = require("express"),
+        app              = express(),
+        bodyParser       = require("body-parser"),
+        mongoose         = require("mongoose"),
+        methodOverride   = require("method-override");
 
 //Models
 const Project = require("./models/project");
@@ -27,7 +27,7 @@ mongoose.set('useUnifiedTopology', true);
 let url = process.env.DATABASEURL || "mongodb://localhost/sarahtonin_designs"; //connect to defined route or backup local route
 mongoose.connect(url); //connect to MongoDB
 
-app.use(bodyParser.urlencoded({ extended: true })); //allows express to pull data from forms using req.body._________
+app.use(bodyParser.urlencoded({ extended: true })); //allows express to pull data from forms using req.body.
 app.set("view engine", "ejs"); //Tells express that /views are ejs files
 app.use(express.static("public")); //Link CSS stylesheets to app, __dirname adds directory that folder lives in
 app.use(methodOverride("_method")); //allow PUT/DELETE requests from form
