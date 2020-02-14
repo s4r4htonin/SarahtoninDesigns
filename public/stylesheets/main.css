@@ -172,11 +172,10 @@ textarea {
     text-align: center;
 }
 
-.jumbotron iframe {
-    margin: auto !important;
-    border: none !important;
-    min-width: 80px !important;
+.jumbotron a {
+    color:rgba(255, 255, 255, 0.9);
 }
+
 
 /* Form Styling */
 
