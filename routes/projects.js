@@ -11,6 +11,9 @@ const express          = require("express"),
 //Models
 const Project = require("../models/project");
 
+//Middleware
+const basicAuth = require("../middleware/auth");
+
 //~~~~~~~~~~~~~~~~~~~~~~~~//
 //   Image Upload Config  //
 //~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -52,12 +55,12 @@ router.get("/", function (req, res) {
 });
 
 //New - get request to "/new"
-router.get("/new", function (req, res) {
+router.get("/new", basicAuth, function (req, res) {
     res.render("projects/new");
 });
 
 //Create - post request to "/"
-router.post("/", upload.single("image"), function (req, res) { //uploads image when posting
+router.post("/", basicAuth, upload.single("image"), function (req, res) { //uploads image when posting
     //Upload image to cloudinary
     cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
         if (err){
@@ -91,7 +94,7 @@ router.get("/:id", function (req, res) {
 });
 
 //Edit - get request to "/:id/edit"
-router.get("/:id/edit", function (req, res){
+router.get("/:id/edit", basicAuth, function (req, res){
     Project.findById(req.params.id, function (err, foundProject){
         if (err) {
             console.log(err);
@@ -103,7 +106,7 @@ router.get("/:id/edit", function (req, res){
 });
 
 //Update - put request to "/:id"
-router.put("/:id", function (req, res){
+router.put("/:id", basicAuth, function (req, res){
     Project.findByIdAndUpdate(req.params.id, req.body.project, function (err, foundProject){
         if (err){
             console.log(err);
@@ -121,7 +124,7 @@ router.put("/:id", function (req, res){
 //~~~~~~~~~~~~~~~~~~~~//
 
 //New - Show form to upload another image for an existing project
-router.get("/:id/new", function (req, res){
+router.get("/:id/new", basicAuth, function (req, res){
     Project.findById(req.params.id, function (err, foundProject) {
         if (err) {
             console.log(err);
@@ -132,7 +135,7 @@ router.get("/:id/new", function (req, res){
 });
 
 //Create - Push new image into image array for existing project
-router.post("/:id", upload.single("image"), function(req, res){
+router.post("/:id", basicAuth, upload.single("image"), function(req, res){
     cloudinary.v2.uploader.upload(req.file.path, function(err, result) { //upload image to cloudinary
         if (err){
             console.log(err);
